@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Constants
-FROM_MAIL="no-reply@ifrog.ru"
+FROM_MAIL="no-reply@mkutin.ru"
 SERVER_NAME=$HOSTNAME
 SITE_LIST="site.txt"
 EMAIL_LIST="email.txt"
