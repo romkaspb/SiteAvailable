@@ -6,8 +6,8 @@ FROM_MAIL="no-reply@example.ru"
 SERVER_NAME=$HOSTNAME
 SITE_LIST="sites.txt"
 EMAIL_LIST="emails.txt"
-OK_LIST="ok.txt"
-BAD_LIST="bad.txt"
+OK_LIST="_ok.txt"
+BAD_LIST="_bad.txt"
 SUBJECT_MAIL="Отчет о проверке доступности сайтов"
 
 # Get alias from site.txt
@@ -29,7 +29,7 @@ for ((a=0; a < ${#aliasArray[*]}; a++)); do
     CHECK_TIME=$(date +"%d-%m-%Y %H:%M:%S")
 
     status=$(curl --write-out %{http_code} --silent --output /dev/null ${aliasArray[$a]}) && {
-    	echo "$a. ${aliasArray[$a]} - $status"
+    	# echo "$a. ${aliasArray[$a]} - $status"
 
     	# Check status code
 	    if [ "$status" != "200" ] && [ "$status" != "301" ] && [ "$status" != "000" ]; then
